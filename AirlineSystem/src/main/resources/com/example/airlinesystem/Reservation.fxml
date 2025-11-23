@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" prefHeight="705.0" prefWidth="874.0" spacing="15" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.airlinesystem.ReservationController">
+
+          <!-- Title -->
+    <Label styleClass="column-header" text="Customer Reservation Form" textFill="#001aff">
+        <font>
+            <Font name="System Bold" size="24.0" />
+        </font>
+    </Label>
+
+          <!-- Form Grid -->
+    <GridPane hgap="10" styleClass="grid-pane" vgap="10">
+        <padding>
+            <Insets bottom="10" left="10" right="10" top="10" />
+        </padding>
+
+              <!-- Personal Info -->
+        <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField fx:id="txtName" prefHeight="29.0" prefWidth="189.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+              <Label text="Father's Name:" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+        <TextField fx:id="txtFatherName" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+
+              <Label text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox fx:id="cmbGender" prefHeight="25.0" prefWidth="178.0" styleClass="combo-box" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+              <Label text="Date of Birth:" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+        <DatePicker fx:id="dpDOB" prefHeight="30.0" prefWidth="184.0" styleClass="date-picker" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+
+              <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+        <TextField fx:id="txtAddress" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+              <Label text="Telephone:" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+        <TextField fx:id="txtPhone" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+
+              <Label text="Profession:" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+        <TextField fx:id="txtProfession" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+
+              <Label text="Concession Type:" GridPane.columnIndex="3" GridPane.rowIndex="6" />
+        <ComboBox fx:id="cmbConcession" prefHeight="25.0" prefWidth="191.0" GridPane.columnIndex="4" GridPane.rowIndex="6" />
+
+              <!-- Flight Info -->
+        <Label text="Travel Date:" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+        <DatePicker fx:id="dpTravelDate" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+              <Label text="Select Flight:" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+        <ComboBox fx:id="cmbFlights" prefHeight="25.0" prefWidth="191.0" GridPane.columnIndex="4" GridPane.rowIndex="8" />
+
+              <Label prefHeight="18.0" prefWidth="88.0" text="Seat Class:" GridPane.rowIndex="10" />
+        <ComboBox fx:id="cmbClass" prefHeight="25.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+
+              <Label text="Seat Preference:" GridPane.columnIndex="3" GridPane.rowIndex="10" />
+        <ComboBox fx:id="cmbSeatPref" prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="4" GridPane.rowIndex="10" />
+
+              <Label text="Fare:" GridPane.rowIndex="12" />
+        <TextField fx:id="txtFare" editable="false" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+      <ComboBox fx:id="cmbSecurity" prefHeight="25.0" prefWidth="189.0" GridPane.columnIndex="4" GridPane.rowIndex="12" />
+      <Label prefHeight="14.0" prefWidth="180.0" text="Secutity" GridPane.columnIndex="3" GridPane.rowIndex="12" />
+
+              <columnConstraints>
+            <ColumnConstraints maxWidth="115.0" minWidth="82.0" prefWidth="105.0" />
+            <ColumnConstraints maxWidth="201.0" minWidth="168.0" prefWidth="178.0" />
+            <ColumnConstraints maxWidth="95.0" minWidth="10.0" prefWidth="32.0" />
+            <ColumnConstraints maxWidth="190.0" minWidth="10.0" prefWidth="150.0" />
+            <ColumnConstraints maxWidth="190.0" minWidth="10.0" prefWidth="190.0" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints /> <!-- 0 -->
+            <RowConstraints /> <!-- 1 -->
+            <RowConstraints /> <!-- 2 -->
+            <RowConstraints /> <!-- 3 -->
+            <RowConstraints /> <!-- 4 -->
+            <RowConstraints /> <!-- 5 -->
+            <RowConstraints /> <!-- 6 -->
+            <RowConstraints /> <!-- 7 -->
+            <RowConstraints /> <!-- 8 -->
+            <RowConstraints /> <!-- 9 -->
+            <RowConstraints /> <!-- 10 -->
+            <RowConstraints /> <!-- 11 -->
+            <RowConstraints /> <!-- 12 -->
+        </rowConstraints>
+    </GridPane>
+
+          <!-- Submit Button -->
+    <Button fx:id="btnSubmitReservation" onAction="#handleSubmitReservation" style="-fx-background-color: blue;" styleClass="submit-button" text="Reserve Ticket" textFill="WHITE" />
+
+          <!-- TableView to show all tickets -->
+    <TableView fx:id="tblReservations" prefHeight="281.0" prefWidth="759.0">
+        <columns>
+            <TableColumn fx:id="colPNR" prefWidth="80.0" text="PNR" />
+            <TableColumn fx:id="colCustName" prefWidth="122.0" text="Customer Name" />
+            <TableColumn fx:id="colFlight" prefWidth="82.0" text="Flight" />
+            <TableColumn fx:id="colClass" maxWidth="110.0" minWidth="-1.0" prefWidth="107.0" text="Class" />
+            <TableColumn fx:id="colSeat" minWidth="0.0" prefWidth="101.0" text="Seat" />
+            <TableColumn fx:id="colFare" prefWidth="89.0" text="Fare" />
+            <TableColumn fx:id="colStatus" prefWidth="112.0" text="Status" />
+        </columns>
+      <VBox.margin>
+         <Insets left="90.0" right="90.0" />
+      </VBox.margin>
+    </TableView>
+</VBox>
