@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="dashboardPane" prefHeight="600.0" prefWidth="900.0" stylesheets="@../../../Css/dashboard.css" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.airlinesystem.DashBoardController">
+
+    <top>
+        <MenuBar styleClass="menu-bar">
+            <menus>
+                <Menu text="File">
+                    <items>
+                        <MenuItem fx:id="menuLogout" text="Logout" />
+                    </items>
+                </Menu>
+                <Menu text="Help">
+                    <items>
+                        <MenuItem fx:id="menuAbout" text="About" />
+                        <MenuItem fx:id="menuInstructions" text="Instructions" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+    </top>
+
+    <left>
+        <VBox alignment="TOP_CENTER" prefWidth="180" spacing="10" styleClass="sidebar">
+            <padding>
+                <Insets bottom="25" left="20" right="20" top="25" />
+            </padding>
+            <Label styleClass="sidebar-title" text="Modules" />
+            <Button fx:id="btnReservation" onAction="#handleReservation" styleClass="sidebar-button" text="Reservation" />
+            <Button fx:id="btnReservedSeats" onAction="#handleReservedSeats" styleClass="sidebar-button" text="Reserved Seats" />
+            <Button fx:id="btnFlightDetails" onAction="#handleFlightDetails" styleClass="sidebar-button" text="Flight Details" />
+            <Button fx:id="btnFare" onAction="#handleFare" styleClass="sidebar-button" text="Fare" />
+            <Button fx:id="btnFleetInfo" onAction="#handleFleetInfo" styleClass="sidebar-button" text="Fleet Info" />
+            <Button fx:id="btnCancellation" onAction="#handleCancellation" styleClass="sidebar-button" text="Cancellation" />
+        </VBox>
+    </left>
+
+    <center>
+        <StackPane fx:id="centerPane" prefHeight="743.0" prefWidth="782.0" styleClass="center-pane">
+            <padding>
+                <Insets bottom="25" left="25" right="25" top="25" />
+            </padding>
+
+            <VBox alignment="TOP_CENTER" spacing="20" styleClass="content-box">
+
+                <Label text="Airline Reservation Dashboard">
+                    <effect>
+                        <DropShadow color="#00000033" offsetX="2" offsetY="2" radius="5" />
+                    </effect>
+                    <font>
+                        <Font size="28" />
+                    </font>
+                </Label>
+
+                <Label fx:id="moduleTitle" prefHeight="49.0" prefWidth="381.0" styleClass="module-title" text="Welcome! Select a module from the left navigation.">
+                    <effect>
+                        <DropShadow color="#88888833" offsetX="1" offsetY="1" radius="3" />
+                    </effect>
+                    <font>
+                        <Font size="16" />
+                    </font>
+                </Label>
+
+                <ImageView fitHeight="396.0" fitWidth="633.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../images/banner.jfif" />
+                    </image>
+                </ImageView>
+
+                <HBox alignment="CENTER" spacing="25">
+                    <VBox alignment="CENTER" styleClass="summary-card">
+                        <Label styleClass="summary-title" text="Flights Today" />
+                        <Label styleClass="summary-value" text="12" />
+                    </VBox>
+
+                    <VBox alignment="CENTER" styleClass="summary-card">
+                        <Label styleClass="summary-title" text="Reservations" />
+                        <Label styleClass="summary-value" text="86" />
+                    </VBox>
+
+                    <VBox alignment="CENTER" styleClass="summary-card">
+                        <Label styleClass="summary-title" text="Active Aircraft" />
+                        <Label styleClass="summary-value" text="9" />
+                    </VBox>
+                </HBox>
+
+                <HBox alignment="CENTER" spacing="15">
+                    <Button fx:id="btnAddReservation" styleClass="scroll-bar" text="Add Reservation" onAction="#handleAddReservation"/>
+                    <Button fx:id="btnSearchPassenger" styleClass="shortcut-button" text="Search Passenger" onAction="#handleSearchPassenger"/>
+                    <Button fx:id="btnViewReports" styleClass="shortcut-button" text="View Updates" onAction="#handleViewReports"/>
+                </HBox>
+
+
+                <Label fx:id="promoLabel" styleClass="promo-text" text=" Holiday Special: 20% Off All Flights!" />
+
+                <ScrollPane fx:id="moduleContent" fitToHeight="true" fitToWidth="true" styleClass="module-scroll">
+                    <content>
+                        <VBox fx:id="contentVBox" spacing="15" styleClass="content-box">
+                            <padding>
+                                <Insets bottom="15" left="15" right="15" top="15" />
+                            </padding>
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+            </VBox>
+        </StackPane>
+    </center>
+
+    <bottom>
+        <HBox alignment="CENTER" spacing="20" styleClass="bottom-pane">
+            <padding>
+                <Insets bottom="12" left="20" right="20" top="12" />
+            </padding>
+            <Label text="Reservation Progress:" />
+            <ProgressBar fx:id="progressBar" prefWidth="300" styleClass="progress-bar" />
+            <ProgressIndicator fx:id="progressIndicator" styleClass="progress-indicator" />
+        </HBox>
+    </bottom>
+
+</BorderPane>

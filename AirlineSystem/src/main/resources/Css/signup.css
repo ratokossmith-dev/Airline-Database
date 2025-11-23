@@ -1,0 +1,92 @@
+/* ---------------------------- */
+/* MAIN BACKGROUND SETTINGS     */
+/* ---------------------------- */
+.anchor-background {
+    -fx-background-color: linear-gradient(to bottom right, #e8f1ff, #c7d9ff);
+}
+
+/* ---------------------------- */
+/* SIGNUP PANEL STYLING         */
+/* ---------------------------- */
+.pane-signup {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #2c62ff;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.18), 15, 0, 0, 5);
+}
+
+/* ---------------------------- */
+/* LABELS (Title, etc.)         */
+/* ---------------------------- */
+.label {
+    -fx-text-fill: #1f1f1f;
+}
+
+/* ---------------------------- */
+/* TEXTFIELDS & PASSWORD FIELDS */
+/* ---------------------------- */
+.text-field, .password-field {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+
+    -fx-background-color: #f4f7ff;
+    -fx-border-color: #b2c3ff;
+    -fx-border-width: 1;
+
+    -fx-padding: 0.5em 1em;
+    -fx-font-size: 14px;
+
+    -fx-prompt-text-fill: #7d8bb3;
+}
+
+.text-field:focused, .password-field:focused {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #2c62ff;
+    -fx-border-width: 2;
+}
+
+/* ---------------------------- */
+/* DATE PICKER                  */
+/* ---------------------------- */
+.date-picker {
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-background-color: #f4f7ff;
+    -fx-border-color: #b2c3ff;
+}
+
+.date-picker:focused {
+    -fx-border-color: #2c62ff;
+    -fx-border-width: 2;
+}
+
+/* ---------------------------- */
+/* SIGNUP BUTTON                */
+/* ---------------------------- */
+.button {
+    -fx-background-color: #2c62ff;
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 8, 0, 0, 4);
+}
+
+.button:hover {
+    -fx-background-color: #1e49cc;
+}
+
+.button:pressed {
+    -fx-background-color: #16389b;
+}
+
+/* ---------------------------- */
+/* SCROLLBAR (If Used)          */
+/* ---------------------------- */
+.scroll-bar .thumb {
+    -fx-background-color: #2c62ff;
+    -fx-background-radius: 4;
+}

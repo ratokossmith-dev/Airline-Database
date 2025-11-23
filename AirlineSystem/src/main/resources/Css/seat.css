@@ -1,0 +1,158 @@
+/* ==========================================================
+   GLOBAL PANEL / BACKGROUND
+   ========================================================== */
+.anchor-pane, AnchorPane {
+    -fx-background-color: linear-gradient(to bottom right, #e9f0ff, #f4f7fc);
+}
+
+.vbox {
+    -fx-background-color: rgba(255, 255, 255, 0.75);
+    -fx-padding: 25;
+    -fx-background-radius: 14;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.15), 12, 0, 0, 4);
+}
+
+/* Title -------------------------------------------------- */
+.label {
+    -fx-text-fill: #1c3e7c;
+    -fx-font-weight: bold;
+}
+
+.label:focused {
+    -fx-text-fill: #1c3e7c;
+}
+
+/* ==========================================================
+   HBOX FLIGHT SELECTION
+   ========================================================== */
+.combo-box, .button {
+    -fx-font-size: 14px;
+}
+
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #b2c5e6;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6 10;
+}
+
+.combo-box:hover {
+    -fx-border-color: #3a6edb;
+}
+
+.combo-box:focused {
+    -fx-border-color: #2559c4;
+    -fx-background-color: #eef3ff;
+}
+
+/* Load Seats Button ------------------------------------- */
+#btnLoadSeats {
+    -fx-background-color: linear-gradient(to right, #2559c4, #3f76df);
+    -fx-text-fill: white;
+    -fx-background-radius: 8;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+}
+
+#btnLoadSeats:hover {
+    -fx-background-color: linear-gradient(to right, #3f76df, #2559c4);
+    -fx-cursor: hand;
+}
+
+#btnLoadSeats:pressed {
+    -fx-background-color: #1d469a;
+}
+
+/* ==========================================================
+   TABLE VIEW – RESERVED SEATS
+   ========================================================== */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #d0dbf5;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.10), 8, 0, 0, 3);
+}
+
+/* Table header ------------------------------------------- */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #dfe9ff, #c9d8fb);
+    -fx-background-radius: 10 10 0 0;
+}
+
+.table-view .column-header {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a3d66;
+}
+
+/* Table rows --------------------------------------------- */
+.table-row-cell {
+    -fx-cell-size: 38;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f7f9ff;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #ffffff;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e3ebff;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #bcd0ff !important;
+    -fx-text-fill: black;
+}
+
+/* ==========================================================
+   PAGINATION
+   ========================================================== */
+.pagination {
+    -fx-page-information-visible: false;
+}
+
+.pagination .control-box {
+    -fx-background-color: transparent;
+}
+
+.pagination .number-button {
+    -fx-background-color: #dce6ff;
+    -fx-background-radius: 8;
+    -fx-text-fill: #1644a3;
+}
+
+.pagination .number-button:hover {
+    -fx-background-color: #c4d6ff;
+}
+
+.pagination .number-button:selected {
+    -fx-background-color: #1644a3;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+/* ==========================================================
+   CANCEL BUTTON
+   ========================================================== */
+#btnCancelReservation {
+    -fx-background-color: linear-gradient(to right, #a81515, #d02c2c);
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-padding: 10 20;
+}
+
+#btnCancelReservation:hover {
+    -fx-background-color: linear-gradient(to right, #d02c2c, #a81515);
+    -fx-cursor: hand;
+}
+
+#btnCancelReservation:pressed {
+    -fx-background-color: #7d0e0e;
+}
