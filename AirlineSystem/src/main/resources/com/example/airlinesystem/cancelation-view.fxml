@@ -16,14 +16,14 @@
 
         <Label style="-fx-font-size: 18px; -fx-font-weight: bold;" text="Ticket Cancellation" />
 
-        <!-- Search and Show All -->
+        
         <HBox spacing="10">
             <TextField fx:id="txtSearchPNR" promptText="Search PNR" />
             <Button fx:id="btnSearch" prefWidth="80" text="Search" />
             <Button fx:id="btnShowAll" prefWidth="100" text="Show All" />
         </HBox>
 
-        <!-- Tickets Table -->
+        
         <TableView fx:id="tblTickets" prefHeight="380">
             <columns>
                 <TableColumn fx:id="colPNR" prefWidth="100" text="PNR" />
@@ -39,7 +39,7 @@
          </VBox.margin>
         </TableView>
 
-        <!-- Cancel Button -->
+    
         <Button fx:id="btnCancelTicket" prefWidth="200" text="Cancel Selected Ticket">
          <VBox.margin>
             <Insets bottom="10.0" left="250.0" right="200.0" />
