@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.airlinesystem.FlightController">
+    <children>
+        <GridPane hgap="10" vgap="10" AnchorPane.leftAnchor="10" AnchorPane.topAnchor="10">
+            <Label text="Flight Code:" GridPane.rowIndex="1" />
+            <TextField fx:id="txtCode" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Label text="Flight Name:" GridPane.rowIndex="2" />
+            <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+            <Label text="Class Code:" GridPane.rowIndex="3" />
+            <TextField fx:id="txtClass" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+            <Label text="Exec Seats:" GridPane.rowIndex="4" />
+            <TextField fx:id="txtExeSeats" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+            <Label text="Eco Seats:" GridPane.rowIndex="5" />
+            <TextField fx:id="txtEcoSeats" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+            <Label text="Fleet ID:" GridPane.rowIndex="6" />
+
+            <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                <Button onAction="#onAdd" text="Add" />
+                <Button onAction="#onUpdate" text="Update" />
+                <Button onAction="#onDelete" text="Delete" />
+                <Button onAction="#onNextToReservation" text="Next → Reservation" />
+            </HBox>
+         <Label text="FLIGHTFORM" GridPane.columnIndex="1">
+            <font>
+               <Font name="System Bold" size="27.0" />
+            </font>
+         </Label>
+         <ComboBox fx:id="comboFleet" prefHeight="25.0" prefWidth="295.0" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+
+        <TableView fx:id="tblFlights" layoutY="328.0" prefHeight="272.0" prefWidth="482.0" AnchorPane.bottomAnchor="10" AnchorPane.leftAnchor="10" AnchorPane.rightAnchor="10" AnchorPane.topAnchor="328.0">
+            <columns>
+                <TableColumn fx:id="colCode" text="Code" />
+                <TableColumn fx:id="colName" text="Name" />
+                <TableColumn fx:id="colClass" prefWidth="70.0" text="Class" />
+                <TableColumn fx:id="colExeSeats" prefWidth="90.0" text="Exec Seats" />
+                <TableColumn fx:id="colEcoSeats" text="Eco Seats" />
+                <TableColumn fx:id="colFleet" text="Fleet ID" />
+            </columns>
+        </TableView>
+      <Separator layoutY="297.0" prefHeight="17.0" prefWidth="502.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="297.0" />
+    </children>
+</AnchorPane>
